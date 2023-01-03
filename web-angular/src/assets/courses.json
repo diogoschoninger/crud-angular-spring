@@ -2,21 +2,21 @@
   {
     "_id": "1",
     "name": "Angular",
-    "category": "Front-end"
+    "category": "front-end"
   },
   {
     "_id": "2",
     "name": "Express",
-    "category": "Back-end"
+    "category": "back-end"
   },
   {
     "_id": "3",
     "name": "React",
-    "category": "Front-end"
+    "category": "front-end"
   },
   {
     "_id": "4",
     "name": "MySQL",
-    "category": "Bancos de dados"
+    "category": "database"
   }
 ]
