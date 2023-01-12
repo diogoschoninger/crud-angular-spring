@@ -10,12 +10,16 @@ import { Course } from '../model/course';
 export class CoursesService {
   private readonly API = '/api/courses';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   list() {
-    return this.httpClient.get<Course[]>(this.API)
+    return this.http.get<Course[]>(this.API)
       .pipe(
         first()
       );
+  }
+
+  save(record: Course) {
+    return this.http.post<Course>(this.API, record);
   }
 }
