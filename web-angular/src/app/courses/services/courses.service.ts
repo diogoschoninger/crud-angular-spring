@@ -5,18 +5,15 @@ import { first } from 'rxjs';
 import { Course } from '../model/course';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CoursesService {
   private readonly API = '/api/courses';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   list() {
-    return this.http.get<Course[]>(this.API)
-      .pipe(
-        first()
-      );
+    return this.http.get<Course[]>(this.API).pipe(first());
   }
 
   save(record: Partial<Course>) {

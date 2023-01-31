@@ -10,11 +10,10 @@ import { CoursesService } from '../services/courses.service';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent {
   courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category', 'actions'];
 
   constructor(
     private coursesService: CoursesService,
@@ -22,18 +21,17 @@ export class CoursesComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.courses$ = this.coursesService.list()
-      .pipe(
-        catchError(err => {
-          this.onError('Erro ao carregar os cursos.')
-          return of([])
-        })
-      );
+    this.courses$ = this.coursesService.list().pipe(
+      catchError((err) => {
+        this.onError('Erro ao carregar os cursos.');
+        return of([]);
+      })
+    );
   }
 
   onError(errorMessage: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: errorMessage
+      data: errorMessage,
     });
   }
 
